@@ -197,5 +197,11 @@ Creating a new branch is quick AND simple.
 -- *干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本*
 
 ## bug分支
+- `$ git stash`冻结当前未提交的修改，用于debug
+- 创建一个分支，在新分支上debug，然后提交
+- 回到原分支， 合并新分支
+- `$ git stash pop`, 恢复冻结的内容，同时删除stash内容，debug的结果也会提交
+-- `$ git stash list`查看stash内容
+-- 另一种方法用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
 
 

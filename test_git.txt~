@@ -136,13 +136,72 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 - 本地Git仓库和Github仓库之间的传输是通过SSH加密的
 1. `$ ssh-keygen -t rsa -C "yourEmail@example.com"`
 2. 一路回车:可发现在主目录下有一个.ssh文件，里面有两个文件.id_rsa和.id_rsa.pub
+-- `ctrl+h`可以查看隐藏文件和文件夹
 3. .id_rsa里是私钥，不能泄漏， .id_rsa.pub里是公钥，可以告诉任何人
 4. 登录github，打开“Account settings”，“SSH Keys”页面
 5. Add SSH key，填任意title，key文本框中粘贴id_rsa.pub中的所有内容
 6. Add Key
 7. 一个github账户可以添加多个key
 
+# github上的远程库
+1. 登录Github, create a new repository, name:"for_backup", create repository
+2. `$ git remote add origin git@github.com:callmesaozu/for_backup.git`
+-- 远程库的名字是origin，默认，可以改，但没必要
+3. `$ git push -u origin master`
+-- 把当前分支master推送到远程
+-- 由于一开始远程库为空， 所以`-u`参数会把本地master分支和远程的master分支关联起来，用于以后的简化
+-- 会出现SSH警告
+```
+The authenticity of host 'github.com (192.30.252.129)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)?
+```
+这是因为SSH连接时需要确认github的key是否真的来自github服务器，输入yes，以后就不用了
+4. 以后的操作： `$ git push origin master`
 
+# clone from origin
+- `git clone git@github.com:callmesaozu/gitskills.git`
+- 也可以clone他人的repo
+- 支持多种协议，但通过ssh支持的原生git速度最快
 
+# 分支管理
+- git鼓励大量使用分支
+- 查看分支: `$ git branch`
+- 创建分支： `$ git checkout -b dev`
+-- 相当于两个命令
+-- `$ git branch dev`
+-- `$ git checkout dev`
+-- 创建并转到dev分支
+- 合并分支到当前分支： `$ git merge master #假设当前分支为master`
+- 删除分支： `$ git branch -d dev`
+
+## 分支冲突
+- 当git无法自动合并时， 先手动解决冲突，在冲突的文件中会有如下显示
+```
+<<<<<<< HEAD
+Creating a new branch is quick & simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1
+```
+- 解决冲突后正常提交
+-- `$ git log --graph --pretty=oneline  --abbrev-commit`可以查看分支图形
+## 分支管理策略
+
+- 通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。
+- 如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+- `$ git merge --no-ff -m"merge with no-ff" dev`, 可以保留dev分支的信息，因为要创建一个commit，所以要添加commit描述
+- 几个注意点
+-- *首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活*
+
+-- *干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本*
+
+## bug分支
+- `$ git stash`冻结当前未提交的修改，用于debug
+- 创建一个分支，在新分支上debug，然后提交
+- 回到原分支， 合并新分支
+- `$ git stash pop`, 恢复冻结的内容，同时删除stash内容，debug的结果也会提交
+-- `$ git stash list`查看stash内容
+-- 另一种方法用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
 
 

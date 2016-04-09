@@ -1,3 +1,4 @@
+
 #python2.7.3
 import re
 def read_mv(fpath):
@@ -6,7 +7,7 @@ def read_mv(fpath):
   dct = {}
   for line in f:
       #matc = re.search('::.+::.*Children\'s', line)
-    matc =  re.search('::.+::(.+)', line)     
+    matc =  re.search('::.+::(.+)', line)
     if matc != None:
         gener = re.split('\|', matc.group(1))
         print(gener)
@@ -17,6 +18,10 @@ def read_mv(fpath):
                 dct[i] += 1
   f.close()
   return dct
-          
-fpath = '//home//lord//data//ml-1m//movies.dat'
-dct = read_mv(fpath)
+
+#fpath = '//home//lord//data//ml-1m//movies.dat'
+#dct = read_mv(fpath)
+
+lst = []
+lst.append('name')
+print(lst)
