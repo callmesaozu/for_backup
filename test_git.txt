@@ -27,4 +27,57 @@ $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m"add 3 files"
 ```
+# 修改
+- 查看修改
+`$ git status`
+```
+位于分支 master
+尚未暂存以备提交的变更：
+  （使用 "git add <file>..." 更新要提交的内容）
+  （使用 "git checkout -- <file>..." 丢弃工作区的改动）
+
+	修改:         test_git.txt
+
+未跟踪的文件:
+  （使用 "git add <file>..." 以包含要提交的内容）
+
+	test_git.txt~
+
+修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
+```
+- 查看具体修改内容
+```
+$ git diff
+diff --git a/test_git.txt b/test_git.txt
+index 5cef34a..66e4a88 100644
+--- a/test_git.txt
++++ b/test_git.txt
+@@ -1,2 +1,30 @@
+ Git is a vversion control system.
+ Git is free software.
++# 安装
++`$ sudo apt-get install git`
++# 设置全局变量名
++`$ git config --global user.name"your Name"`
++`$ git config --global user.email"yourEmail@example.com"`
++表示这台机器上所有的git仓库都使用这个配置,便于同伴标识自己，也可以为每个仓库指
++# 创建版本库
++`$ mkdir /home/lord/git_repository`
++`$ cd /home/lord/git_repository`
++`$ pwd  #pwd命令用于显示当前目录`
++`/home/lord/git_repository`
++# 版本库的初始化
++`$ git init`
++`初始化空的 Git 版本库于 /home/lord/git_repos/.git/`
++可发现当前路径下多了一个.git目录，这个目录不要动, 隐藏的，可用`ls -ah`查看
++
+```
+- 提交修改
+```
+$ git add test_git.txt
+$ git commit -m"添加了一些修改命令"
+```
+
+
+
 
