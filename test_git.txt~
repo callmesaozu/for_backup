@@ -77,7 +77,6 @@ index 5cef34a..66e4a88 100644
 $ git add test_git.txt
 $ git commit -m"添加了一些修改命令"
 ```
-`$ git add -A`添加所有文件
 # 回退
 
 - 回顾每次提交修改的内容
