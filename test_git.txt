@@ -117,8 +117,11 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 - git commit是把暂存区的所有内容提交到当前分支
 
 # 撤销修改
--- `$ git checkout -- filename`用于撤销当前版本的修改
--- `git reset HEAD filename`用于把暂存区的修改撤销掉，unstage，从新放回工作区
+- `$ git checkout -- filename`用于撤销当前版本的修改, 但未add
+- `git reset HEAD filename`用于把暂存区的修改撤销掉，unstage，从新放回工作区
+-- `$ git reset`命令既可以回退版本，也可以把暂存区的修改回退到工作区
+# 删除文件
+
 
 
 
