@@ -106,6 +106,16 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 - 查看所有的版本号
 `$ git reflog`
 
+# 一些名词
+- 工作区：电脑里能看到的目录， 如/home/lord/git_repos文件夹
+- 版本库：工作区中的隐藏目录.git， 其中包含：
+-- stage或者index的暂存区
+-- git自动创建的第一个分支master
+-- 一个指向master的指针HEAD
+
+- git add事实上就是把文件修改添加到暂存区
+- git commit是把暂存区的所有内容提交到当前分支
+
 
 
 
