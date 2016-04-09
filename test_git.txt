@@ -1,2 +1,30 @@
 Git is a vversion control system.
 Git is free software.
+# 安装
+`$ sudo apt-get install git`
+# 设置全局变量名
+`$ git config --global user.name"your Name"`
+`$ git config --global user.email"yourEmail@example.com"`
+表示这台机器上所有的git仓库都使用这个配置,便于同伴标识自己，也可以为每个仓库指定单独的名称
+# 创建版本库
+`$ mkdir /home/lord/git_repository`
+`$ cd /home/lord/git_repository`
+`$ pwd  #pwd命令用于显示当前目录`
+`/home/lord/git_repository`
+# 版本库的初始化
+`$ git init`
+`初始化空的 Git 版本库于 /home/lord/git_repos/.git/`
+可发现当前路径下多了一个.git目录，这个目录不要动, 隐藏的，可用`ls -ah`查看
+
+# 添加文件
+- 要将文件拷贝到当前目录下
+- 只能跟踪文本文件的内容
+- word文件不行，是二进制文件
+`$ git add test_git.txt`
+`$ git commit -m"编写了一个文件，用来记录git的学习过程"`
+```
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m"add 3 files"
+```
+
