@@ -77,6 +77,21 @@ index 5cef34a..66e4a88 100644
 $ git add test_git.txt
 $ git commit -m"添加了一些修改命令"
 ```
+# 回退
+
+- 回顾每次提交修改的内容
+`$ git log`
+commit事实上是一个文件快照，MD5?
+`$ git log --pretty=oneline`
+```
+12b4a63dcc70cd521ce669ffed9bdf8c461ef592 添加了提交修改命令
+a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
+39397d606bf086bf1239988e3dec25fea0e7ac51 一个用于学习git命令的文件
+0ac6e5b20f4304b55d39ba08b92398c78a5ff0b7 编写了一个文件，从movieLen的数据集中读
+```
+用于美化显示
+`12b4a63dcc70cd521ce669ffed9bdf8c461ef592`之类的数字是commit id(版本号),通过SHA1计算得出，用16进制表示
+
 
 
 
