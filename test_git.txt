@@ -1,5 +1,8 @@
 Git is a vversion control system.
 Git is free software.
+>廖雪峰老师的官方网站
+>http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+
 # 安装
 `$ sudo apt-get install git`
 # 设置全局变量名
@@ -121,8 +124,26 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 - `git reset HEAD filename`用于把暂存区的修改撤销掉，unstage，从新放回工作区
 -- `$ git reset`命令既可以回退版本，也可以把暂存区的修改回退到工作区
 # 删除文件
+- 如果一个文件提交到版本库中，可以用`$ git rm fordelete.txt`删除
+-- 工作区中文件和版本库中一并删除
+- 如果一个文件提交到版本库中，并且已经手动删除
+-- 还可以用`$ git checkout -- fordelete.txt`命令恢复
+-- 如果要彻底删除，则用`$ git rm -- fordelete.txt`
+-- `checkout`命令是用版本库中的版本替换工作区的版本，无论工作区是修改还是删除，都可以一键还原
 
+# 远程仓库
+- 可以使用github，也可以自己搭建一个服务器
+- 本地Git仓库和Github仓库之间的传输是通过SSH加密的
+1. `$ ssh-keygen -t rsa -C "yourEmail@example.com"`
+2. 一路回车:可发现在主目录下有一个.ssh文件，里面有两个文件.id_rsa和.id_rsa.pub
+3. .id_rsa里是私钥，不能泄漏， .id_rsa.pub里是公钥，可以告诉任何人
+4. 登录github，打开“Account settings”，“SSH Keys”页面
+5. Add SSH key，填任意title，key文本框中粘贴id_rsa.pub中的所有内容
+6. Add Key
+7. 一个github账户可以添加多个key
 
+# github上的远程库
+1. 登录Github
 
 
 
