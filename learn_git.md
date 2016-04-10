@@ -1,4 +1,4 @@
-Git is a vversion control system.
+﻿Git is a vversion control system.
 Git is free software.
 >廖雪峰老师的官方网站
 >http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
@@ -16,9 +16,11 @@ $ mkdir /home/lord/git_repository
 $ cd /home/lord/git_repository
 $ pwd  #pwd命令用于显示当前目录
 /home/lord/git_repository
+```
+
+
 
 ## 版本库的初始化
-
 ```
 $ git init
 初始化空的 Git 版本库于 /home/lord/git_repos/.git/
@@ -51,12 +53,12 @@ $ git commit -m"add 3 files"
   （使用 "git add <file>..." 更新要提交的内容）
   （使用 "git checkout -- <file>..." 丢弃工作区的改动）
 
-	修改:         test_git.txt
+修改:         test_git.txt
 
 未跟踪的文件:
   （使用 "git add <file>..." 以包含要提交的内容）
 
-	test_git.txt~
+test_git.txt~
 
 修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
 ```
@@ -105,9 +107,11 @@ $ git commit -m"添加了一些修改命令"
 
 `$ git log`
 
+
+
 commit事实上是一个文件快照，MD5?
 
--- `$ git log --pretty=oneline`用于美化显示
+ -- `$ git log --pretty=oneline`用于美化显示
 
 ```
 12b4a63dcc70cd521ce669ffed9bdf8c461ef592 添加了提交修改命令
@@ -122,19 +126,19 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 `$ git reset --hard HEAD^`
 
--- HEAD是指当前版本
+ -- HEAD是指当前版本
 
--- HEAD^之当前版本的前一个版本
+ -- HEAD^之当前版本的前一个版本
 
--- HEAD^^............两个版本, HEAD^^^...
+ -- HEAD^^............两个版本, HEAD^^^...
 
--- HEAD~100，当前版本的前100个版本
+ -- HEAD~100，当前版本的前100个版本
 
 或者
 
 `$ git reset --hard 12b4a63dc`
 
--- 12b4a63dc是要回到的版本的版本号的一部分，不必写全
+ -- 12b4a63dc是要回到的版本的版本号的一部分，不必写全
 
 - 查看当前版本的内容
 
@@ -150,11 +154,11 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 - 版本库：工作区中的隐藏目录.git， 其中包含：
 
--- stage或者index的暂存区
+ -- stage或者index的暂存区
 
--- git自动创建的第一个分支master
+ -- git自动创建的第一个分支master
 
--- 一个指向master的指针HEAD
+ -- 一个指向master的指针HEAD
 
 - git add事实上就是把文件修改添加到暂存区
 
@@ -166,21 +170,21 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 - `git reset HEAD filename`用于把暂存区的修改撤销掉，unstage，从新放回工作区
 
--- `$ git reset`命令既可以回退版本，也可以把暂存区的修改回退到工作区
+ -- `$ git reset`命令既可以回退版本，也可以把暂存区的修改回退到工作区
 
 # 删除文件
 
 - 如果一个文件提交到版本库中，可以用`$ git rm fordelete.txt`删除
 
--- 工作区中文件和版本库中一并删除
+ -- 工作区中文件和版本库中一并删除
 
 - 如果一个文件提交到版本库中，并且已经手动删除
 
--- 还可以用`$ git checkout -- fordelete.txt`命令恢复
+ -- 还可以用`$ git checkout -- fordelete.txt`命令恢复
 
--- 如果要彻底删除，则用`$ git rm -- fordelete.txt`
+ -- 如果要彻底删除，则用`$ git rm -- fordelete.txt`
 
--- `checkout`命令是用版本库中的版本替换工作区的版本，无论工作区是修改还是删除，都可以一键还原
+ -- `checkout`命令是用版本库中的版本替换工作区的版本，无论工作区是修改还是删除，都可以一键还原
 
 # 远程仓库
 - 可以使用github，也可以自己搭建一个服务器
@@ -191,8 +195,8 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 2. 一路回车:可发现在主目录下有一个.ssh文件，里面有两个文件.id_rsa和.id_rsa.pub
 
--- `ctrl+h`可以查看隐藏文件和文件夹
-3. .id_rsa里是私钥，不能泄漏， .id_rsa.pub里是公钥，可以告诉任何人
+ - `ctrl+h`可以查看隐藏文件和文件夹
+ - .id_rsa里是私钥，不能泄漏， .id_rsa.pub里是公钥，可以告诉任何人
 
 4. 登录github，打开“Account settings”，“SSH Keys”页面
 
@@ -209,15 +213,18 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 2. `$ git remote add origin git@github.com:callmesaozu/for_backup.git`
 
--- 远程库的名字是origin，默认，可以改，但没必要
+ - 远程库的名字是origin，默认，可以改，但没必要
+
 
 3. `$ git push -u origin master`
 
--- 把当前分支master推送到远程
+ - 把当前分支master推送到远程
 
--- 由于一开始远程库为空， 所以`-u`参数会把本地master分支和远程的master分支关联起来，用于以后的简化
 
--- 会出现SSH警告
+ - 由于一开始远程库为空， 所以`-u`参数会把本地master分支和远程的master分支关联起来，用于以后的简化
+
+
+ - 会出现SSH警告
 
 ```
 The authenticity of host 'github.com (192.30.252.129)' can't be established.
@@ -228,6 +235,8 @@ Are you sure you want to continue connecting (yes/no)?
 这是因为SSH连接时需要确认github的key是否真的来自github服务器，输入yes，以后就不用了
 
 4. 以后的操作： `$ git push origin master`
+
+
 
 
 # clone from origin
@@ -247,13 +256,13 @@ Are you sure you want to continue connecting (yes/no)?
 
 - 创建分支： `$ git checkout -b dev`
 
--- 相当于两个命令
+ -- 相当于两个命令
 
--- `$ git branch dev`
+ -- `$ git branch dev`
 
--- `$ git checkout dev`
+ -- `$ git checkout dev`
 
--- 创建并转到dev分支
+ -- 创建并转到dev分支
 
 - 合并分支到当前分支： `$ git merge master #假设当前分支为master`
 
@@ -276,7 +285,7 @@ Creating a new branch is quick AND simple.
 
 - 解决冲突后正常提交
 
--- `$ git log --graph --pretty=oneline  --abbrev-commit`可以查看分支图形
+ -- `$ git log --graph --pretty=oneline  --abbrev-commit`可以查看分支图形
 
 ## 分支管理策略
 
@@ -303,9 +312,9 @@ Creating a new branch is quick AND simple.
 
 - `$ git stash pop`, 恢复冻结的内容，同时删除stash内容，debug的结果也会提交
 
--- `$ git stash list`查看stash内容
+ -- `$ git stash list`查看stash内容
 
--- 另一种方法用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
+ -- 另一种方法用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
 
 ## feature分支
 
@@ -319,17 +328,17 @@ Creating a new branch is quick AND simple.
 
 - `$ git remote`查看远程库的信息
 
--- 如果要详细的信息， 用`$ git remote -v`
+ -- 如果要详细的信息， 用`$ git remote -v`
 
 - 推送分支可以用`$ git push origin branchName`
 
--- master是主分支，要时刻同步
+ -- master是主分支，要时刻同步
 
--- dev是开发分支，所有成员都在上面工作，也需要同步
+ -- dev是开发分支，所有成员都在上面工作，也需要同步
 
--- feature分支视具体情况而定
+ -- feature分支视具体情况而定
 
--- bug分支不需要
+ -- bug分支不需要
 
 - 抓取分支
 
@@ -343,7 +352,7 @@ Creating a new branch is quick AND simple.
 
 5. 假如我也修改了readme文件，推送到远程库时可能推送失败
 
-```
+ ```
 $ git push origin dev
 To git@github.com:callmesaozu/for_backup.git
  ! [rejected]        dev -> dev (fetch first)
@@ -352,18 +361,18 @@ error: 无法推送一些引用到 'git@github.com:callmesaozu/for_backup.git'
 提示：一个版本库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更
 提示：（如 'git pull ...'）。
 提示：详见 'git push --help' 中的 'Note about fast-forwards' 小节。
-```
+ ```
 
 6. 用`$ git pull`将远程库中的文件克隆到本地，解决冲突后再提交
 
-```
+ ```
 $ git pull
 自动合并 readme~
 冲突（内容）：合并冲突于 readme~
 自动合并 readme
 冲突（内容）：合并冲突于 readme
 自动合并失败，修正冲突然后提交修正的结果。
-```
+ ```
 
 如果`$ git pull`失败，一般是因为没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
 

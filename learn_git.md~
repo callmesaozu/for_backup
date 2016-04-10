@@ -144,7 +144,7 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 `$ git reflog`
 
-# 一些名词
+## 一些名词
 
 - 工作区：电脑里能看到的目录， 如/home/lord/git_repos文件夹
 
@@ -229,6 +229,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 4. 以后的操作： `$ git push origin master`
 
+
 # clone from origin
 
 - `git clone git@github.com:callmesaozu/gitskills.git`
@@ -290,6 +291,7 @@ Creating a new branch is quick AND simple.
 -- *首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活*
 
 -- *干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本*
+
 
 ## bug分支
 
