@@ -204,4 +204,20 @@ Creating a new branch is quick AND simple.
 -- `$ git stash list`查看stash内容
 -- 另一种方法用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除
 
+## feature分支
+- 最好每添加一个新功能都新建一个feature分支，在feature分支上添加功能，最后再合并到原分支上
+- 在合并之前，如果删除feature分支，将失掉修改，因此git会阻止这种行为
+- 如果要强行删除，用`$ git branch -D feature`, 注意D是大写
+
+## 多人协作
+- `$ git remote`查看远程库的信息
+-- 如果要详细的信息， 用`$ git remote -v`
+- 推送分支可以用`$ git push origin branchName`
+-- master是主分支，要时刻同步
+-- dev是开发分支，所有成员都在上面工作，也需要同步
+-- feature分支视具体情况而定
+-- bug分支不需要
+- 抓取分支
+
+
 
