@@ -11,16 +11,23 @@ Git is free software.
 `$ git config --global user.email"yourEmail@example.com"`
 表示这台机器上所有的git仓库都使用这个配置,便于同伴标识自己，也可以为每个仓库指定单独的名称
 ## 创建版本库
-`$ mkdir /home/lord/git_repository`
-`$ cd /home/lord/git_repository`
-`$ pwd  #pwd命令用于显示当前目录`
-`/home/lord/git_repository`
+```
+$ mkdir /home/lord/git_repository
+$ cd /home/lord/git_repository
+$ pwd  #pwd命令用于显示当前目录
+/home/lord/git_repository
+
 ## 版本库的初始化
-`$ git init`
-`初始化空的 Git 版本库于 /home/lord/git_repos/.git/`
+
+```
+$ git init
+初始化空的 Git 版本库于 /home/lord/git_repos/.git/
+```
+
 可发现当前路径下多了一个.git目录，这个目录不要动, 隐藏的，可用`ls -ah`查看
 
 ## 添加文件
+
 - 要将文件拷贝到当前目录下
 - 只能跟踪文本文件的内容
 - word文件不行，是二进制文件
@@ -31,6 +38,7 @@ $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m"add 3 files"
 ```
+
 ## 修改
 
 - 查看修改
@@ -91,7 +99,7 @@ $ git commit -m"添加了一些修改命令"
 
 `$ git add -A`添加所有文件
 
-# 回退
+## 回退
 
 - 回顾每次提交修改的内容
 
@@ -234,7 +242,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 - git鼓励大量使用分支
 
-- 查看分支: `$ git branch`
+-  查看分支: `$ git branch`
 
 - 创建分支： `$ git checkout -b dev`
 
@@ -253,7 +261,9 @@ Are you sure you want to continue connecting (yes/no)?
 
 ## 分支冲突
 
+
 - 当git无法自动合并时， 先手动解决冲突，在冲突的文件中会有如下显示
+
 
 ```
 <<<<<<< HEAD

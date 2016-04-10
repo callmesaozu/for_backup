@@ -16,7 +16,9 @@ $ mkdir /home/lord/git_repository
 $ cd /home/lord/git_repository
 $ pwd  #pwd命令用于显示当前目录
 /home/lord/git_repository
+
 ## 版本库的初始化
+
 ```
 $ git init
 初始化空的 Git 版本库于 /home/lord/git_repos/.git/
@@ -25,6 +27,7 @@ $ git init
 可发现当前路径下多了一个.git目录，这个目录不要动, 隐藏的，可用`ls -ah`查看
 
 ## 添加文件
+
 - 要将文件拷贝到当前目录下
 - 只能跟踪文本文件的内容
 - word文件不行，是二进制文件
@@ -35,6 +38,7 @@ $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m"add 3 files"
 ```
+
 ## 修改
 
 - 查看修改
@@ -95,7 +99,7 @@ $ git commit -m"添加了一些修改命令"
 
 `$ git add -A`添加所有文件
 
-# 回退
+## 回退
 
 - 回顾每次提交修改的内容
 
@@ -140,7 +144,7 @@ a335aeecc09196d76ef52146239c328ce3d8d055 添加了一些修改命令
 
 `$ git reflog`
 
-# 一些名词
+## 一些名词
 
 - 工作区：电脑里能看到的目录， 如/home/lord/git_repos文件夹
 
@@ -225,6 +229,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 4. 以后的操作： `$ git push origin master`
 
+
 # clone from origin
 
 - `git clone git@github.com:callmesaozu/gitskills.git`
@@ -238,7 +243,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 - git鼓励大量使用分支
 
-- 查看分支: `$ git branch`
+-  查看分支: `$ git branch`
 
 - 创建分支： `$ git checkout -b dev`
 
@@ -257,7 +262,9 @@ Are you sure you want to continue connecting (yes/no)?
 
 ## 分支冲突
 
+
 - 当git无法自动合并时， 先手动解决冲突，在冲突的文件中会有如下显示
+
 
 ```
 <<<<<<< HEAD
@@ -284,6 +291,7 @@ Creating a new branch is quick AND simple.
 -- *首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活*
 
 -- *干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本*
+
 
 ## bug分支
 
