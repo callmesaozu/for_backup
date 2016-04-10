@@ -7,6 +7,7 @@ Git is free software.
 `$ sudo apt-get install git`
 ## 设置全局变量名
 `$ git config --global user.name"your Name"`
+
 `$ git config --global user.email"yourEmail@example.com"`
 表示这台机器上所有的git仓库都使用这个配置,便于同伴标识自己，也可以为每个仓库指定单独的名称
 ## 创建版本库
