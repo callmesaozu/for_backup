@@ -218,6 +218,52 @@ Creating a new branch is quick AND simple.
 -- feature分支视具体情况而定
 -- bug分支不需要
 - 抓取分支
+1. 假设当前的分支为dev，将其推送到远程库`$ git push origin dev`
+2. 同伴在自己目录下克隆我的远程库`$ git clone git@github.com:callmesaozu/for_backup`
+3. 同伴只能看到master分支，用`$ git checkout -b dev origin/dev`切换到dev分支
+4. 假如同伴修改了文件readme, 在自己的本地库中提交更改以后，更新到远程库中，`$ git push origin dev`
+5. 假如我也修改了readme文件，推送到远程库时可能推送失败
+```
+$ git push origin dev
+To git@github.com:callmesaozu/for_backup.git
+ ! [rejected]        dev -> dev (fetch first)
+error: 无法推送一些引用到 'git@github.com:callmesaozu/for_backup.git'
+提示：更新被拒绝，因为远程版本库包含您本地尚不存在的提交。这通常是因为另外
+提示：一个版本库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更
+提示：（如 'git pull ...'）。
+提示：详见 'git push --help' 中的 'Note about fast-forwards' 小节。
+```
+6. 用`$ git pull`将远程库中的文件克隆到本地，解决冲突后再提交
+```
+$ git pull
+自动合并 readme~
+冲突（内容）：合并冲突于 readme~
+自动合并 readme
+冲突（内容）：合并冲突于 readme
+自动合并失败，修正冲突然后提交修正的结果。
+```
+如果`$ git pull`失败，一般是因为没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+```
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+来自 github.com:callmesaozu/for_backup
+   dfc06f6..1d382ce  dev        -> origin/dev
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+$ git branch --set-upstream dev origin/dev
+Branch dev set up to track remote branch dev from origin.
+```
+再git pull
 
 
 

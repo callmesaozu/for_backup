@@ -209,4 +209,15 @@ Creating a new branch is quick AND simple.
 - 在合并之前，如果删除feature分支，将失掉修改，因此git会阻止这种行为
 - 如果要强行删除，用`$ git branch -D feature`, 注意D是大写
 
+## 多人协作
+- `$ git remote`查看远程库的信息
+-- 如果要详细的信息， 用`$ git remote -v`
+- 推送分支可以用`$ git push origin branchName`
+-- master是主分支，要时刻同步
+-- dev是开发分支，所有成员都在上面工作，也需要同步
+-- feature分支视具体情况而定
+-- bug分支不需要
+- 抓取分支
+
+
 
