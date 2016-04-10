@@ -11,13 +11,17 @@ Git is free software.
 `$ git config --global user.email"yourEmail@example.com"`
 表示这台机器上所有的git仓库都使用这个配置,便于同伴标识自己，也可以为每个仓库指定单独的名称
 ## 创建版本库
-`$ mkdir /home/lord/git_repository`
-`$ cd /home/lord/git_repository`
-`$ pwd  #pwd命令用于显示当前目录`
-`/home/lord/git_repository`
+```
+$ mkdir /home/lord/git_repository
+$ cd /home/lord/git_repository
+$ pwd  #pwd命令用于显示当前目录
+/home/lord/git_repository
 ## 版本库的初始化
-`$ git init`
-`初始化空的 Git 版本库于 /home/lord/git_repos/.git/`
+```
+$ git init
+初始化空的 Git 版本库于 /home/lord/git_repos/.git/
+```
+
 可发现当前路径下多了一个.git目录，这个目录不要动, 隐藏的，可用`ls -ah`查看
 
 ## 添加文件
